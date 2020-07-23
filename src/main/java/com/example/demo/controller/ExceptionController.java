@@ -37,7 +37,9 @@ public class ExceptionController {
 //        throw new MyException("500","出异常啦")
                 int a = 1/0;
         System.out.println("myException......");
+        System.out.println("hello，你好啊");
                 return a;
+
 
     }
 
