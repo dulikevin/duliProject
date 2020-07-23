@@ -25,6 +25,7 @@ public class ExceptionController {
                 int a = 1/0;
         System.out.println("myException......");
         System.out.println("hello，你好啊");
+        System.out.println("你好啊");
                 return a;
 
 
