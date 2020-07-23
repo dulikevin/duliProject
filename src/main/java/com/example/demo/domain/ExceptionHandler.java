@@ -23,15 +23,18 @@ public class ExceptionHandler {
         map.put("code",500);
         map.put("msg",e.getMessage());
         map.put("url",request.getRequestURL());
+        System.out.println("Exception 异常");
         return map;
     }
 
     @org.springframework.web.bind.annotation.ExceptionHandler(value = MyException.class)
     Object handlerMyException(MyException e){
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("error.html");
+        modelAndView.setViewName("exception.html");
         modelAndView.addObject("msg",e.getMessage());
+        System.out.println("MyException 异常");
         return modelAndView;
+
     }
 
 

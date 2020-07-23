@@ -33,7 +33,12 @@ public class ExceptionController {
 
     @RequestMapping("/showMyException")
     public Object showMyException()  {
-        throw new MyException("500","出异常啦");
+
+//        throw new MyException("500","出异常啦")
+                int a = 1/0;
+        System.out.println("myException......");
+                return a;
+
     }
 
 
