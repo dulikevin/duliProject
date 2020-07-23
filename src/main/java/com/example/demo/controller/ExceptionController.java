@@ -14,6 +14,7 @@ public class ExceptionController {
     public Object showException()  {
         int a = 1/0;
         System.out.println("hello,你好啊，dev");
+        System.out.println("git stash...");
         return a;
     }
 
