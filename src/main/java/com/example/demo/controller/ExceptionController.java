@@ -12,21 +12,8 @@ public class ExceptionController {
 
     @RequestMapping("showException")
     @ResponseBody
-    public Object showException() throws Exception {
-        int a = 0;
-        try{
-            a = 1/0;
-            if(a == 10){
-                return a;
-            }
-        }catch(Exception e) {
-            int c= 100;
-            System.out.println("c-->"+c);
-            return a;
-        }finally {
-            int b = 5;
-            System.out.println("hello。。。"+b);
-        }
+    public Object showException()  {
+        int a = 1/0;
         return a;
     }
 
