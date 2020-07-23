@@ -14,7 +14,7 @@ public class ExceptionController {
     @ResponseBody
     public Object showException()  {
         int a = 1/0;
-        System.out.println("hello,你好啊");
+        System.out.println("hello,你好啊，master");
         return a;
     }
 
