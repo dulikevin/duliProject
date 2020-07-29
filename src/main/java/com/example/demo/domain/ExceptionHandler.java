@@ -34,14 +34,6 @@ public class ExceptionHandler {
         modelAndView.addObject("msg",e.getMessage());
         System.out.println("MyException 异常");
         return modelAndView;
-
     }
-
-
-
-
-
-
-
 
 }

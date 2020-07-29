@@ -1,8 +1,12 @@
 package com.example.demo.controller;
 
+import com.example.demo.domain.MyException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/exception")
@@ -11,30 +15,18 @@ public class ExceptionController {
 
     @RequestMapping("showException")
     @ResponseBody
-    public Object showException()  {
-        int a = 1/0;
-        System.out.println("hello,你好啊，dev");
-        System.out.println("git stash...");
-        System.out.println("v1.1");
-        return a;
+    public Object showException(HttpServletRequest request, ModelAndView model)  {
+        System.out.println("showException");
+        HttpSession session = request.getSession();
+        session.invalidate();
+        System.out.println("model之前...");
+        model.addObject("duli","hello");
+        System.out.println("model之后...");
+        return null;
     }
-
 
     @RequestMapping("/showMyException")
     public Object showMyException()  {
-
-//        throw new MyException("500","出异常啦")
-                int a = 1/0;
-        System.out.println("myException......");
-        System.out.println("hello，你好啊");
-                return a;
-
-
+       throw new MyException("500","出异常啦");
     }
-
-
-
-
-
-
 }
